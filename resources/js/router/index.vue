@@ -8,9 +8,9 @@
         saveScrollPosition: true,
         routes: [
             {
-                name: 'hello',
-                path: '/hello',
-                component: resolve => void(require(['../components/Hello.vue'], resolve))
+                name: 'Index',
+                path: '/',
+                component: resolve => void(require(['../components/Index.vue'], resolve))
             }
         ]
     });
