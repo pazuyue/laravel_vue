@@ -146,7 +146,7 @@
             handleDelete() {
                 this.$ajax({
                     method: 'get',
-                    url: '/api/api/auth/userDel?userid='+this.user_id,
+                    url: '/api/auth/userDel?userid='+this.user_id,
                 }).then(res=> {
                     this.$message.success("冻结成功！");
                 }).catch(error => {

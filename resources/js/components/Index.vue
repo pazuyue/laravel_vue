@@ -23,7 +23,6 @@
         mounted() {
             this.$emit('visible',false);
         }
-
     }
 </script>
 

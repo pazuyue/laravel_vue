@@ -22,9 +22,16 @@ class UserServer
         return self::$instance;
     }
 
+
     public function userList(){
         $users=User::all();
         return $users;
+    }
+
+    public function userDel($userid){
+        $user=User::find($userid);
+        $user->delete();
+        return $user->trashed();
     }
 
 }

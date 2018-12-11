@@ -153,9 +153,10 @@ class UserController extends Controller
     public function userDel(Request $request){
 
         $userid = $request->userid;
-        $user=User::find($userid);
-        $user->delete();
-        if($user->trashed()){
+        $user=UserServer::getInstance();
+        $trashed =$user->userDel($userid);
+
+        if($trashed){
 
             return response()->json([
                 'code' => 1,
