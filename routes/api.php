@@ -18,3 +18,14 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 });
 
 Route::get('/user', 'UserController@index');
+
+Route::group(['prefix' => 'auth','namespace' => 'Auth'],function ($router)
+{
+    $router->get('/userList', 'UserController@userList');
+    $router->post('/userAdd', 'UserController@userAdd');
+    $router->post('/userFile', 'UserController@userFile');
+    $router->get('/userDel', 'UserController@userDel');
+    $router->get('/userEdit', 'UserController@userEditShow');
+    $router->post('/userEdit', 'UserController@userEdit');
+    $router->post('/login', 'LoginController@login');
+});
