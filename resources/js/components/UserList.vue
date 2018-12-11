@@ -93,7 +93,7 @@
 
 <script>
     /*引入公共样式*/
-    //import '@/assets/css/UserList.css'
+    import '../../css/UserList.css'
     //import UserEdit from './UserEdit.vue'
 
     export default {
