@@ -169,7 +169,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         };
     },
     mounted: function mounted() {
-        this.$emit('visible', false);
+        this.$emit('visible', true);
     },
 
     methods: {

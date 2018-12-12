@@ -71,7 +71,7 @@
             };
         },
         mounted() {
-            this.$emit('visible',false);
+            this.$emit('visible',true);
         },
         methods: {
             submitForm(formName) {

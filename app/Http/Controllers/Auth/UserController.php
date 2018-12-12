@@ -7,17 +7,25 @@ use App\Http\Controllers\Controller;
 
 use App\Http\Model\User;
 use App\Http\Server\UserServer;
+use App\Jobs\SendReminderEmail;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Redis;
 
 
 class UserController extends Controller
 {
     public function index(){
-        $users = DB::table('users')->get();
-        $user =  DB::connection('mongodb')->table('users')->get();
-        var_dump($users);
-        dd($user);
+        //$user = DB::table('users')->where('id',1)->get();
+        //$user =  DB::connection('mongodb')->table('users')->get();
+        $user =User::findOrFail(1);
+        //Redis::set('user', json_encode($user));
+
+        //var_dump($user);
+        //dd($user);
+        $ret=$this->dispatch(new SendReminderEmail($user));
+        dd($ret);
+
     }
 
 
