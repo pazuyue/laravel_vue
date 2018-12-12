@@ -23,7 +23,8 @@ class UserController extends Controller
 
         //var_dump($user);
         //dd($user);
-        $ret=$this->dispatch(new SendReminderEmail($user));
+        $job = (new SendReminderEmail($user))->onQueue('SendReminderEmail');
+        $ret=$this->dispatch($job);
         dd($ret);
 
     }
