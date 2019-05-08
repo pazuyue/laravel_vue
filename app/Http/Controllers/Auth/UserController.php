@@ -29,6 +29,10 @@ class UserController extends Controller
 
     }
 
+    public function phpinfo(){
+        phpinfo();
+    }
+
 
     /**
      * Get a validator for an incoming registration request.

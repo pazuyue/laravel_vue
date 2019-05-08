@@ -15,6 +15,6 @@ Route::get('/', function () {
     return view('index');
 });
 
-
+Route::get('/phpinfo', 'UserController@phpinfo')->name('home');
 
 
